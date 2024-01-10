@@ -12,14 +12,49 @@
 "l2": "https://cdn.discordapp.com/attachments/1065487041611186196/1107430701348966540/Dolphin_Lite_V4.0.7z",
 "b1": "v3.5",
 "b2": "v4.0"
+},
+"e3": {
+"name": "DeSmuME",
+"l1": "https://www.mediafire.com/file/ops98l93qtpu9js/"
+},
+"e4": {
+"name": "OptiDroid",
+"l1": "https://www.mediafire.com/file/le2mlf2rtq0qksd/",
+"l2": "https://www.mediafire.com/file/ebus0codydv7a01/",
+"b1": "v1.2",
+"b2": "v1.1"
+},
+"e5": {
+"name": "OptiNox",
+"l1": "https://www.mediafire.com/file/jeajc4wmbpmfi8d/"
+},
+"e6": {
+"name": "OptiMemu",
+"l1": "https://www.mediafire.com/file/rwfjkya21jxii3x"
+},
+"e7": {
+"name": "PCSX2",
+"l1": "https://www.mediafire.com/file/xz6iz1k4twpkptt/"
+},
+"e8": {
+"name": "PPSSPP",
+"l1": "https://cdn.discordapp.com/attachments/1065487041611186196/1131014766635257867/PPSSPP_LITE_V1.1.7z"
+},
+"e9": {
+"name": "pSXFIN",
+"l1": "https://cdn.discordapp.com/attachments/1065487041611186196/1114768795865722990/pSXFIN_V1.1.7z"
+},
+"e10": {
+"name": "Project64",
+"l1": "https://www.mediafire.com/file/8kk9gmx2u351101/"
 }
 },
 "t2": {
-"title": "Otro",
-"subtitle": "Literal",
+"title": "Juegos",
+"subtitle": "Juegos optimizados",
 "e1": {
-"name": "Momo",
-"l1": "https://www.mediafire.com/file/u03w1u1rxgya2jt"
+"name": "Bad Piggies",
+"l1": "https://cdn.discordapp.com/attachments/1065489877497548861/1177785781545353267/Bad_Piggies.7z"
 }
 }
 }
