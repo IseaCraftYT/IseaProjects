@@ -1,17 +1,17 @@
 {
 "t1": {
-"title": "Repacks",
-"subtitle": "Programas y Juegos Comprimidos en Repacks",
+"title": "Emuladores",
+"subtitle": "Emuladores optimizados",
 "e1": {
-"name": "WorldBox",
-"l1": "https://www.mediafire.com/file/3h0de6xxw61a7el/"
-}
-"t2": {
-"title": "LOL",
-"subtitle": "LOLs",
-"e1": {
-"name": "LOLITOELCRACK",
-"l1": "https://www.mediafire.com/file/3h0de6xxw61a7el/"
+"name": "Citra",
+"l1": "https://www.mediafire.com/file/u03w1u1rxgya2jt"
+},
+"e2": {
+"name": "Dolphin",
+"l1": "https://cdn.discordapp.com/attachments/1065487041611186196/1166925656131645540/Dolphin_Lite_V3.5.7z",
+"l2": "https://cdn.discordapp.com/attachments/1065487041611186196/1107430701348966540/Dolphin_Lite_V4.0.7z",
+"b1": "v3.5",
+"b2": "v4.0"
 }
 }
 }
