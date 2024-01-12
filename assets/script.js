@@ -1,5 +1,5 @@
 document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json..."
-fetch("https://raw.githubusercontent.com/iseaprojects/IseaProjects/main/elements.json")
+fetch("https://raw.githubusercontent.com/iseaprojects/iseaprojects.github.io/main/elements.json")
     .then(response => {
     if (!response.ok) {
         document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json...<br>Falló al cargar elements.json"
@@ -20,17 +20,18 @@ fetch("https://raw.githubusercontent.com/iseaprojects/IseaProjects/main/elements
 
 
 // This is the only way I found to make it so the code wouldn't execute until the JSON file was loaded
-// I don't know if it's efficient, but it's definetly easy and doesn't make the code any more complex
+// I don't know if it's efficient, but it's definitely easy and doesn't make the code any more complex
 function main() {
 
 // ----------------- Downloading further info ----------------- //
 
 document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json...<br>Cargando information.json..."
-fetch("https://raw.githubusercontent.com/OptiJuegos/OptiJuegos.github.io/main/information.json")
+fetch("https://raw.githubusercontent.com/iseaprojects/iseaprojects.github.io/main/information.json")
 .then(response => {
     if (!response.ok) {
         document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json...<br>Cargando information.json...<br>Falló al cargar information.json"
         setTimeout(function(){document.getElementById("loading").style.opacity = "0"}, 3000)
+        setTimeout(function(){document.getElementById("loading").style.display = "none"}, 4000)
     }
     return response.json()
     }
@@ -47,10 +48,11 @@ fetch("https://raw.githubusercontent.com/OptiJuegos/OptiJuegos.github.io/main/in
 // ------------------------ Defaults ------------------------ //
 
 tab = {}
-tab.selected = "t1"
+tab.selected = "t3"
 entry = {}
 infoMenuOpen = false
 
+document.getElementById("entryContainer").scrollTo({top: 0})
 window.addEventListener("resize", compactMode)
 
 
@@ -133,6 +135,22 @@ document.addEventListener("keydown", function(event) {
                 break;
         }
     }
+    if (event.altKey) {
+        switch (event.code) {
+            case "ArrowUp":
+                if (tab.selectedInt > 1) {
+                    tab.selectedInt -= 1
+                    changeTab("t" + tab.selectedInt)
+                }
+                break;
+            case "ArrowDown":
+                if (tab.selectedInt < tab.amount) {
+                    tab.selectedInt += 1
+                    changeTab("t" + tab.selectedInt)
+                }
+                break;
+        }
+    }
 
     // I had to put this outside the Switch statement
     if (event.ctrlKey && event.key === "Enter") {
@@ -156,10 +174,18 @@ document.addEventListener("keydown", function(event) {
 
 // Change tab
 function changeTab(id) {
+    // Scrolls back to top
+    if (tab.selected !== id) {
+        document.getElementById("entryContainer").scrollTo({top: 0})
+    }
+
+    // Styling of the tab buttons
     document.getElementById(tab.selected).style.backgroundColor = null
+    document.getElementById(tab.selected).style.boxShadow = null
     document.getElementById(tab.selected).style.cursor = null
     tab.selected = id
-    document.getElementById(tab.selected).style.backgroundColor = "rgba(255, 255, 255, 0.07)"
+    document.getElementById(tab.selected).style.backgroundColor = "#FFFFFF12"
+    document.getElementById(tab.selected).style.boxShadow = "inset 0 0 0 3px #FFFFFF12"
     document.getElementById(tab.selected).style.cursor = "default"
 
     // This is used for keyboard navigation
@@ -171,9 +197,6 @@ function changeTab(id) {
     infoMenuOpen = true
     infoMenu()
 
-    // Scrolls back to top
-    document.getElementById("entryContainer").scrollTo({top: 0})
-
     updateEntries()
     entry.selected = "e1"
     selectEntry("e1")
@@ -183,9 +206,7 @@ function changeTab(id) {
 // Update entries
 function updateEntries() {
     // Deletes old entries
-    for (let i = 1; i <= entry.amount; i++) {
-        document.getElementById("e" + i).remove()
-    }
+    document.getElementById("entryContainer").textContent = ""
 
     // Creates the new ones
     entry.amount = Object.keys(elementsData[tab.selected]).length - 2
@@ -204,14 +225,14 @@ function updateEntries() {
 function selectEntry(id, keyboardNavigation) {
     document.getElementById(entry.selected).style = null
     entry.selected = id
-    document.getElementById(entry.selected).style.backgroundColor = "#454545"
+    document.getElementById(entry.selected).style.backgroundColor = "#FFFFFF17"
 
     // This is used for keyboard navigation
     entry.selectedInt = parseInt(entry.selected.slice(1))
 
     if (keyboardNavigation) {
         if (entry.selectedInt > 1) {
-            document.getElementById(entry.selected).scrollIntoView({block: "start", behavior: "smooth"})
+            document.getElementById(entry.selected).scrollIntoView({block: "center", behavior: "smooth"})
         } else {
             document.getElementById("entryContainer").scrollTo({top: 0, behavior: "smooth"})
         }
@@ -292,7 +313,7 @@ function infoMenu() {
 
 // Enable/disable compact mode
 function compactMode() {
-    if (window.innerHeight < 730 || window.innerWidth - 580 < tab.amount * 140) {
+    if (window.innerHeight < 721 || window.innerWidth - 580 < tab.amount * 140) {
         document.getElementById("header").style.borderBottom = "none"
         document.getElementById("header").style.borderRight = "2px solid #00000040"
         document.getElementById("header").style.width = "296px"
@@ -307,7 +328,7 @@ function compactMode() {
         document.getElementById("socialContainer").style.bottom = "20px"
         document.getElementById("socialContainer").style.left = "64px"
 
-        // This changes a CSS variable which is used for the tab buttons width
+        // This changes a CSS variable which is used for the tab buttons
         document.documentElement.style.setProperty("--tabWidth", "180px")
     } else {
         document.getElementById("header").style = null
@@ -317,10 +338,10 @@ function compactMode() {
         document.getElementById("socialContainer").style = null
         document.documentElement.style.setProperty("--tabWidth", "140px")
     }
-    if (window.innerHeight < 583) {
+    if (window.innerHeight < 575) {
         document.getElementById("mainContainer").style.height = window.innerHeight + "px"
-        document.getElementById("mainBox").style.height = window.innerHeight - 127 + "px"
-        document.getElementById("listBox").style.height = window.innerHeight - 199 + "px"
+        document.getElementById("mainBox").style.height = window.innerHeight - 124 + "px"
+        document.getElementById("listBox").style.height = window.innerHeight - 194 + "px"
     } else {
         document.getElementById("mainContainer").style.height = null
         document.getElementById("mainBox").style.height = null
