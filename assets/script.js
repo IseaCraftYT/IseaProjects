@@ -1,5 +1,5 @@
 document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json..."
-fetch("https://raw.githubusercontent.com/IseaCraftYT/IseaProjects/main/elements.json")
+fetch("https://raw.githubusercontent.com/iseaprojects/IseaProjects/main/elements.json")
     .then(response => {
     if (!response.ok) {
         document.getElementById("loading").innerHTML = "Ejecutando JavaScript...<br>Cargando elements.json...<br>Falló al cargar elements.json"
