@@ -48,7 +48,7 @@ fetch("https://raw.githubusercontent.com/iseaprojects/iseaprojects.github.io/mai
 // ------------------------ Defaults ------------------------ //
 
 tab = {}
-tab.selected = "t3"
+tab.selected = "t1"
 entry = {}
 infoMenuOpen = false
 
