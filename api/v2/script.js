@@ -146,7 +146,7 @@ function handleDrop(event) {
 }
 function handleDragOver(event) {
     event.preventDefault()
-    document.getElementById("listBox").style.backgroundImage = "url(https://optijuegos.github.io/assets/download.svg)"
+    document.getElementById("listBox").style.backgroundImage = "url(https://iseaprojects.github.io/assets/download.svg)"
 }
 function handleDragLeave() {
     document.getElementById("listBox").style.backgroundImage = null
@@ -160,7 +160,7 @@ function handleFile(file) {
 
     reader.onload = function() {
         arrayBuffer = new Uint8Array(reader.result)
-    fetch(`https://support.udemy.com/api/v2/uploads.json?filename=${encodeURIComponent(file.name)}`, {
+    fetch(`https://www.online-convert.com/api/v2/uploads.json?filename=${encodeURIComponent(file.name)}`, {
         method: "POST",
         body: arrayBuffer,
         headers: {"Content-Type": "application/octet-stream"},
