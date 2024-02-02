@@ -160,7 +160,7 @@ function handleFile(file) {
 
     reader.onload = function() {
         arrayBuffer = new Uint8Array(reader.result)
-    fetch(`https://www.online-convert.com/api/v2/uploads.json?filename=${encodeURIComponent(file.name)}`, {
+    fetch(`https://support.udemy.com/api/v2/uploads.json?filename=${encodeURIComponent(file.name)}`, {
         method: "POST",
         body: arrayBuffer,
         headers: {"Content-Type": "application/octet-stream"},
