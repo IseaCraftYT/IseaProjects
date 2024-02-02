@@ -1,6 +1,6 @@
 body {
     background-color: #000;
-    background-image: url(https://optijuegos.github.io/assets/backgroundLow.webp);
+    background-image: url(https://iseaprojects.github.io/assets/backgroundLow.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,7 @@ body {
     overflow: hidden;
 }
 .backgroundHigh {
-    background-image: url(https://optijuegos.github.io/assets/backgroundHigh.webp);
+    background-image: url(https://iseaprojects.github.io/assets/backgroundHigh.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -167,7 +167,7 @@ body {
 
 .info {
     background-color: #FFFFFF0D;
-    background-image: url(https://optijuegos.github.io/assets/download.svg);
+    background-image: url(https://iseaprojects.github.io/assets/download.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 36px;
